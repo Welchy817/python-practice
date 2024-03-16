@@ -1,6 +1,7 @@
 # Enter your code here. Read input from STDIN. Print output to STDOUT
-engNum = int(input())
-engStudent = set(map(int, input().split()))
-freNum = int(input())
-freStudent = set(map(int, input().split()))
-print(len(engStudent.symmetric_difference(freStudent)))
+M = int(input())
+a = set(map(int, input().split()))
+N = int(input())
+b = set(map(int, input().split()))
+diff = a.symmetric_difference(b)
+print(*sorted(diff), sep='\n')
