@@ -9,8 +9,8 @@ for items in range(N):
     price = 0
     item_name = ""
     item = list(map(str, input().split()))
-    item_name = ' '.join(item[0:len(item)-1])
-    price = int(item[len(item)-1])
+    item_name = ' '.join(item[:-1])
+    price = int(item[-1])
     if item_name in ordered.keys():
         ordered[item_name] += price
     else:
