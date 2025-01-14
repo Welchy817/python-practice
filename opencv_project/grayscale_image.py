@@ -1,6 +1,11 @@
 import cv2
+import argparse
 
-image = cv2.imread("./cappy.png")
+ap = argparse.ArgumentParser()
+ap.add_argument("-i", "--image", help = "path to the image")
+args = vars(ap.parse_args())
+
+image = cv2.imread(args["image"])
 
 cv2.imshow("Display Window", image)
 print("Printing base image...")

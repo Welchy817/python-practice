@@ -1,10 +1,16 @@
 import cv2
 import numpy as np
+import argparse
 
-image = cv2.imread("./dice/one.png")
-cv2.waitKey(0)
+ap = argparse.ArgumentParser()
+ap.add_argument("-i", "--image", help = "path to the image")
+args = vars(ap.parse_args())
+
+image = cv2.imread(args["image"])
 
 gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+blurred = cv2.GaussianBlur(gray, (5, 5), 0)
+thresh  = cv2.threshold(blurred, 60, 255, cv2.THRESH_BINARY)[1]
 
 edge = cv2.Canny(gray, 30, 200)
 cv2.waitKey(0)
