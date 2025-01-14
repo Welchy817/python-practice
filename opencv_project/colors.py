@@ -10,10 +10,11 @@ image = cv2.imread(args["image"])
 cv2.imshow("Games", image)
 cv2.waitKey(0)
 boundaries = [
-    ([24, 26, 101], [84, 94, 218]),     # Red
     ([86, 31, 4], [220, 131, 100]),     # Blue
-    ([27, 153, 164], [102, 198, 221]),  # Yellow
-    ([42, 56, 36], [88, 191, 81])       # Green
+    ([42, 56, 36], [88, 191, 81]),      # Green
+    ([24, 26, 101], [84, 94, 218]),     # Red
+    ([27, 153, 164], [102, 198, 221])   # Yellow
+
 ]
 
 for (lower, upper) in boundaries:
