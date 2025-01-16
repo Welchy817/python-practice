@@ -22,6 +22,7 @@ sd = ShapeDetector
 
 for c in contours:
     M = cv2.moments(c)
+    print(M)
     try:
         cX = int((M["m10"] / M["m00"]))
     except ZeroDivisionError:
